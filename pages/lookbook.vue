@@ -17,7 +17,7 @@
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         <div class="md:col-span-2">
           <p class="font-body text-white/50 leading-relaxed text-lg">
-            Shot on the streets and rooftops of REVOLTS Streetwear Shop. The SS26 collection is about the weight of everyday life — the fabric we put on our backs, the ground beneath our feet.
+            Shot on the streets and rooftops of REVOLT Streetwear Shop. The SS26 collection is about the weight of everyday life — the fabric we put on our backs, the ground beneath our feet.
           </p>
         </div>
         <div class="flex items-end">
