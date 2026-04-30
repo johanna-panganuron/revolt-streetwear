@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #CC0000;
+  --accent: #FF2222;
+  --dark: #181818;
+  --surface: #222222;
+  --surface-light: #2e2e2e;
+  --white: #FFFFFF;
+  --gray-muted: #888;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px var(--primary);
+    color: transparent;
+  }
+
+  .clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Product card hover */
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary text-white font-condensed font-semibold tracking-widest uppercase px-8 py-3 text-sm transition-all duration-200;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+}
+
+.btn-outline {
+  @apply border border-white text-white font-condensed font-semibold tracking-widest uppercase px-8 py-3 text-sm transition-all duration-200;
+}
+
+.btn-outline:hover {
+  @apply bg-white text-dark;
+}
+
+/* Accordion */
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* Cart drawer */
+.cart-drawer {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Image zoom */
+.zoom-container {
+  overflow: hidden;
+}
+
+.zoom-image {
+  transition: transform 0.5s ease;
+}
+
+.zoom-container:hover .zoom-image {
+  transform: scale(1.06);
+}
+
+/* Size badge */
+.size-btn {
+  @apply w-11 h-11 border border-white/20 text-sm font-condensed tracking-wide flex items-center justify-center transition-all duration-150;
+}
+
+.size-btn:hover:not(.sold-out) {
+  @apply border-white;
+}
+
+.size-btn.active {
+  @apply bg-white text-dark border-white;
+}
+
+.size-btn.sold-out {
+  @apply opacity-30 cursor-not-allowed line-through;
+}
+
+/* Filter chip */
+.filter-chip {
+  @apply px-4 py-1.5 border border-white/20 text-xs font-condensed tracking-widest uppercase transition-all duration-150 cursor-pointer;
+}
+
+.filter-chip.active {
+  @apply bg-primary border-primary text-white;
+}
+
+.filter-chip:hover:not(.active) {
+  @apply border-white/60;
+}
+
+/* Grid overlay pattern */
+.grid-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Red accent underline */
+.red-underline {
+  position: relative;
+}
+
+.red-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+}
+
+/* Masonry-like effect */
+.masonry-item:nth-child(odd) {
+  margin-top: 0;
+}
+
+.masonry-item:nth-child(even) {
+  margin-top: 40px;
+}
+
+/* Promo badge */
+.badge-new {
+  @apply bg-primary text-white text-xs font-condensed tracking-widest uppercase px-2 py-0.5;
+}
+
+.badge-sold {
+  @apply bg-white/10 text-white/60 text-xs font-condensed tracking-widest uppercase px-2 py-0.5;
+}
+
+/* Range input */
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  cursor: pointer;
+  border-radius: 0;
+}
+
+/* Overlay */
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
