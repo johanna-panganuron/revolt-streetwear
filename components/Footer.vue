@@ -46,14 +46,25 @@
         </div>
       </div>
 
-      <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="font-condensed text-xs tracking-widest uppercase text-white/30">
-          © {{ new Date().getFullYear() }} Revolt Streetwear. All rights reserved.
-        </p>
-        <p class="font-condensed text-xs tracking-widest uppercase text-white/20">
-          Cordova, Cebu, Philippines
-        </p>
-      </div>
+ <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+  <p class="font-condensed text-xs tracking-widest uppercase text-white/30">
+    © {{ new Date().getFullYear() }} Revolt Streetwear. All rights reserved.
+  </p>
+  <p class="font-condensed text-xs tracking-widest uppercase text-white/20">
+    Cordova, Cebu, Philippines
+  </p>
+  <p class="font-condensed text-xs tracking-widest uppercase text-white/20">
+    Developed by 
+    <a 
+      href="https://johannapanganuron.vercel.app" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="text-primary/60 hover:text-primary transition-colors"
+    >
+      Johanna B. Panganuron
+    </a>
+  </p>
+</div>
     </div>
   </footer>
 </template>
