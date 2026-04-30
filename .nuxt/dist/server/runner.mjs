@@ -1,1 +1,0 @@
-export { default } from "file:///C:/Users/johanna/OneDrive/Documents/4th_Year/2nd_Sem/portfolio_projects/purely_front_end/cordova-streetwear/node_modules/@nuxt/vite-builder/dist/vite-node-runner.mjs"
